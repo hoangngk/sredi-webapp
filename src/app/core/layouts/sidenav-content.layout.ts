@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +12,6 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     SidenavComponent,
     HeaderComponent,
-    BreadcrumbComponent,
     RouterModule,
     MatSidenavModule,
   ],
@@ -23,7 +21,6 @@ import { CommonModule } from '@angular/common';
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header [sidenav]="sidenav"></app-header>
-      <app-breadcrumb></app-breadcrumb>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>`,
@@ -38,6 +35,11 @@ import { CommonModule } from '@angular/common';
         background: #ffffff;
         padding: 32px 12px;
         border-right: 1px solid #e0e0e0;
+        border-radius: 0;
+      }
+
+      mat-sidenav-content {
+        background-color: #ffffff;
       }
     `,
   ],
