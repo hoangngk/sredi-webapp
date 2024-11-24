@@ -1,15 +1,8 @@
+
 @import "@ag-grid-community/styles/ag-grid.css";
 @import "@ag-grid-community/styles/ag-theme-quartz.css";
-@import "styles/sredi-theme";
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-}
-app-root {
-  height: 100%;
-}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

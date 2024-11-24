@@ -22,10 +22,7 @@ import { CommonModule } from '@angular/common';
       <app-sidenav></app-sidenav>
     </mat-sidenav>
     <mat-sidenav-content>
-      <p>
-        <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
-      </p>
-      <app-header></app-header>
+      <app-header [sidenav]="sidenav"></app-header>
       <app-breadcrumb></app-breadcrumb>
       <router-outlet></router-outlet>
     </mat-sidenav-content>

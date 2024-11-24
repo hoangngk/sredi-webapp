@@ -1,0 +1,46 @@
+<div class="header-container">
+  <div class="header-left">
+    <div class="toggle-side-nav">
+      <button (click)="toggleSideNav()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="chevron_left"
+        ></mat-icon>
+      </button>
+    </div>
+    <div class="search-input">
+      <input type="text" mat-input />
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="mail">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Mail icon"
+        fontIcon="mail"
+      ></mat-icon>
+    </div>
+
+    <div class="notification">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="notifications"
+      ></mat-icon>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+</div>
