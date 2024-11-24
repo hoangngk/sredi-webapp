@@ -1,4 +1,43 @@
-<mat-sidenav-container>
-  <mat-sidenav>Start</mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
-</mat-sidenav-container>
+<div class="sidebar-container">
+  <div class="logo-container">
+    <img src="images/logo.png" alt="logo" class="logo" />
+  </div>
+
+  <!-- GENERAL Section -->
+  <div class="menu-header">GENERAL</div>
+  <ul class="menu-list">
+    <!-- Overview -->
+    <li class="menu-item active">
+      <span>Overview</span>
+    </li>
+
+    <!-- Navigation 02 (Collapsible) -->
+    <li class="menu-item" (click)="toggleSubmenu('navigation02')">
+      <span>Navigation 02</span>
+      <!-- Submenu -->
+      <ul class="submenu" *ngIf="submenu.navigation02">
+        <li class="submenu-item">
+          <span>Navigation 03</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- TOOLS Section -->
+  <div class="menu-header">TOOLS</div>
+  <ul class="menu-list">
+    <!-- Account & Settings -->
+    <li class="menu-item">
+      <span>Account & Settings</span>
+    </li>
+    <!-- Help -->
+    <li class="menu-item">
+      <span>Help</span>
+    </li>
+    <!-- Dark Mode -->
+    <li class="menu-item dark-mode-toggle">
+      <span>Dark Mode</span>
+      <mat-slide-toggle></mat-slide-toggle>
+    </li>
+  </ul>
+</div>
