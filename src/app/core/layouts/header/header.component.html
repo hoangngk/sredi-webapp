@@ -2,11 +2,7 @@
   <div class="header-left">
     <div class="toggle-side-nav">
       <button (click)="toggleSideNav()" color="primary" mat-icon-button>
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          svgIcon="toggle_sidenav"
-        ></mat-icon>
+        <mat-icon svgIcon="toggle_sidenav"></mat-icon>
       </button>
     </div>
     <div class="search-container">
@@ -17,11 +13,11 @@
     </div>
   </div>
   <div class="header-right">
-    <button mat-icon-button matBadge="2" matBadgeColor="warn">
-      <mat-icon>mail</mat-icon>
+    <button mat-icon-button matBadge="2" matBadgeColor="warn" class="mail-badge">
+      <mat-icon svgIcon="mail"></mat-icon>
     </button>
-    <button mat-icon-button matBadge="8" matBadgeColor="warn">
-      <mat-icon>notifications</mat-icon>
+    <button mat-icon-button matBadge="8" matBadgeColor="warn" class="notifications-badge">
+      <mat-icon svgIcon="notifications"></mat-icon>
     </button>
 
     <mat-form-field
@@ -31,10 +27,12 @@
     >
       <mat-label>Fiscal Period</mat-label>
       <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate placeholder="Start date" />
-        <input matEndDate placeholder="End date" />
+      <input matStartDate placeholder="Start date" />
+      <input matEndDate placeholder="End date" />
       </mat-date-range-input>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon svgIcon="calendar"></mat-icon>
+      </mat-datepicker-toggle>
       <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
   </div>

@@ -28,11 +28,32 @@ import { MatBadgeModule } from '@angular/material/badge';
 export class HeaderComponent {
   public sidenav = input<MatSidenav>();
 
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon(
-      'toggle_sidenav',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('icons/toggle_sidenav.svg')
-    );
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry
+      .addSvgIcon(
+        'toggle_sidenav',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'icons/toggle_sidenav.svg'
+        )
+      )
+      .addSvgIcon(
+        'mail',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('icons/mail.svg')
+      )
+      .addSvgIcon(
+        'notifications',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'icons/notifications.svg'
+        )
+      ).addSvgIcon(
+        'calendar',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'icons/calendar.svg'
+        )
+      );
   }
 
   public toggleSideNav() {
