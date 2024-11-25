@@ -4,33 +4,39 @@
   </div>
 
   <app-profile-selection></app-profile-selection>
-  
+
   <div class="menu">
     <div class="group">
       <div class="menu-header">GENERAL</div>
-    <ul class="menu-list">
-      <li class="menu-item active">
-        <span>Overview</span>
-      </li>
-      <li class="menu-item" (click)="toggleSubmenu('navigation02')">
-        <span>Navigation 02</span>
-        <ul class="submenu" *ngIf="submenu.navigation02">
-          <li class="submenu-item">
-            <span>Navigation 03</span>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    </div>  
+      <ul class="menu-list">
+        <li class="menu-item active">
+          <mat-icon svgIcon="home"></mat-icon>
+          <span>Overview</span>
+        </li>
+        <li class="menu-item" (click)="toggleSubmenu('navigation02')">
+          <mat-icon svgIcon="store"></mat-icon>
+          <span>Navigation 02</span>
+          <ul class="submenu" *ngIf="submenu.navigation02">
+            <li class="submenu-item">
+              <mat-icon svgIcon="store"></mat-icon>
+              <span>Navigation 03</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <div class="group">
       <div class="menu-header">TOOLS</div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span>Account & Settings</span>
-      </li>
-      <li class="menu-item">
-        <span>Help</span>
-      </li>
-    </ul>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <mat-icon svgIcon="settings"></mat-icon>
+          <span>Account & Settings</span>
+        </li>
+        <li class="menu-item">
+          <mat-icon svgIcon="help"></mat-icon>
+          <span>Help</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
