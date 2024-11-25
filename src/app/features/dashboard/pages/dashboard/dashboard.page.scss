@@ -1,0 +1,11 @@
+.dashboard-wrapper {
+  padding: 16px 24px;
+  ::ng-deep {
+    --mdc-outlined-card-outline-color: white;
+  }
+
+  .overall-hours-card {
+    margin-top: 24px;
+    display: block;
+  }
+}

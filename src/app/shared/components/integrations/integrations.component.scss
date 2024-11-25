@@ -1,0 +1,28 @@
+.integrations-section {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 16px;
+}
+
+.integrations-list {
+  display: flex;
+  gap: 12px;
+}
+
+.integration-item {
+  background-color: #e0f7fa;
+  color: #0277bd;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 16px;
+  text-align: center;
+  white-space: nowrap;
+}

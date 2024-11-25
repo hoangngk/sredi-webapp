@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ProfileSelectionComponent } from '../../../shared/profile-selection/profile-selection.component';
+import { ProfileSelectionComponent } from '../../../shared/components/profile-selection/profile-selection.component';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -12,7 +12,6 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [CommonModule, MatListModule, MatIconModule, MatSlideToggleModule, ProfileSelectionComponent],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
-  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidenavComponent {

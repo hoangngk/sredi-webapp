@@ -21,7 +21,9 @@ import { CommonModule } from '@angular/common';
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header [sidenav]="sidenav"></app-header>
-      <router-outlet></router-outlet>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>`,
   styles: [
@@ -40,6 +42,10 @@ import { CommonModule } from '@angular/common';
 
       mat-sidenav-content {
         background-color: #ffffff;
+      }
+
+      main {
+        
       }
     `,
   ],
