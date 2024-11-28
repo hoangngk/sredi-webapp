@@ -8,7 +8,7 @@ import {
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TimesheetService } from '../../../../../../core/services/timesheet.service';
-import { TimesheetSummary } from '../../../../../../core/models/timesheet';
+import { TimesheetSummary } from '../../../../../../core/models/timesheet.model';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({

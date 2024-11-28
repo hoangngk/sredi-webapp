@@ -9,6 +9,7 @@ import { AgCharts } from 'ag-charts-angular';
 import { AgChartOptions } from 'ag-charts-community';
 import { WorkingHoursService } from '../../../../../../core/services/working-hours.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
 @Component({
   selector: 'app-overall-hours',
   standalone: true,

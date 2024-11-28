@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { TimesheetSummary } from '../models/timesheet';
+import { TimesheetSummary } from '../models/timesheet.model';
 
 @Injectable()
 export class TimesheetService {
