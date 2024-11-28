@@ -1,0 +1,12 @@
+.overall-hours-container {
+  display: grid;
+  grid-template-columns: 400px 2fr;
+  gap: 10px;
+
+  .chart-container {
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+  }
+}

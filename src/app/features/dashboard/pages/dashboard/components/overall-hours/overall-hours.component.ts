@@ -12,7 +12,7 @@ import { AgChartOptions } from 'ag-charts-community';
 })
 export class OverallHoursComponent implements OnInit {
   public donutOptions!: AgChartOptions;
-  public barOptions!: AgChartOptions
+  public barOptions!: AgChartOptions;
 
   public ngOnInit(): void {
     this.donutOptions = {
@@ -26,6 +26,7 @@ export class OverallHoursComponent implements OnInit {
           calloutLabelKey: 'category',
           angleKey: 'value',
           innerRadiusRatio: 0.5,
+          fills: ['#091836', '#03BCF3'],
           innerLabels: [
             {
               text: 'Total Hours',
@@ -39,7 +40,6 @@ export class OverallHoursComponent implements OnInit {
               color: 'green',
             },
           ],
-         
         },
       ],
       legend: {
@@ -52,18 +52,73 @@ export class OverallHoursComponent implements OnInit {
           },
         },
       },
+      background: {
+        fill: '#F7F9FB',
+      },
     };
 
     this.barOptions = {
       data: [
-        { month: 'Jan', avgTemp: 2.3, iceCreamSales: 162000 },
-        { month: 'Mar', avgTemp: 6.3, iceCreamSales: 302000 },
-        { month: 'May', avgTemp: 16.2, iceCreamSales: 800000 },
-        { month: 'Jul', avgTemp: 22.8, iceCreamSales: 1254000 },
-        { month: 'Sep', avgTemp: 14.5, iceCreamSales: 950000 },
-        { month: 'Nov', avgTemp: 8.9, iceCreamSales: 200000 },
+        {
+          month: 'Mar',
+          avgTemp: 6.3,
+          cumulativeHours: 302000,
+          totalHours: 500000,
+        },
+        {
+          month: 'May',
+          avgTemp: 16.2,
+          cumulativeHours: 800000,
+          totalHours: 1000000,
+        },
+        {
+          month: 'Jul',
+          avgTemp: 22.8,
+          cumulativeHours: 1254000,
+          totalHours: 1500000,
+        },
+        {
+          month: 'Sep',
+          avgTemp: 14.5,
+          cumulativeHours: 950000,
+          totalHours: 1200000,
+        },
+        {
+          month: 'Nov',
+          avgTemp: 8.9,
+          cumulativeHours: 200000,
+          totalHours: 300000,
+        },
       ],
-      series: [{ type: 'bar', xKey: 'month', yKey: 'iceCreamSales' }]
+      series: [
+        {
+          type: 'bar',
+          xKey: 'month',
+          yKey: 'cumulativeHours',
+          yName: 'Cumulative Hours',
+          fill: '#091836',
+        },
+        {
+          type: 'bar',
+          xKey: 'month',
+          yKey: 'totalHours',
+          yName: 'Total Hours',
+          fill: ' #03BCF3',
+        },
+      ],
+      legend: {
+        position: 'bottom',
+        item: {
+          marker: { shape: 'circle' },
+          label: {
+            fontSize: 12,
+            color: '#6b7280',
+          },
+        },
+      },
+      background: {
+        fill: '#F7F9FB',
+      },
     };
   }
 }

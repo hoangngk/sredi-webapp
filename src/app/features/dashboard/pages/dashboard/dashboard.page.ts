@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { IntegrationsComponent } from '../../../../shared/components/integrations/integrations.component';
-import { OverallHoursComponent } from '../../../../shared/components/overall-hours/overall-hours.component';
+import { OverallHoursComponent } from './components/overall-hours/overall-hours.component';
 import { MatCardModule } from '@angular/material/card';
 import { SimpleCardComponent } from '../../../../core/components/simple-card/simple-card.component';
 @Component({

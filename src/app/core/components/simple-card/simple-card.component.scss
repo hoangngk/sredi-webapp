@@ -2,9 +2,25 @@
   --mdc-outlined-card-container-color: white;
   border: 1px solid #e3e3e3;
   border-radius: 8px;
+  --mat-card-title-text-font: "Plus Jakarta Sans", sans-serif;
 }
 
 .mat-mdc-card-header {
   display: grid;
   grid-template-columns: 1fr max-content;
+  margin-bottom: 8px;
+  
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .actions {
+    min-height: auto;
+    height: auto;
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
 }

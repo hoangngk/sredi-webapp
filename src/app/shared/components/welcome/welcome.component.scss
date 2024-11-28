@@ -6,6 +6,7 @@
   .welcome-text {
     display: flex;
     flex-direction: column;
+    gap: 12px;
 
     h1 {
       font-size: 24px;
@@ -17,10 +18,10 @@
     .date-range {
       font-size: 14px;
       color: #9ca3af;
-      background-color: #f1f5f9;
+      background-color: #f0f0f0;
       padding: 4px 8px;
-      border-radius: 4px;
-      margin-top: 8px;
+      border-radius: 12px;
+      width: fit-content;
     }
   }
 
