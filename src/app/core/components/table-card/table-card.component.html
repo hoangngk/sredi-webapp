@@ -1,0 +1,43 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <div class="header-row">
+      <mat-card-title>
+        <span class="title">{{ title() }}</span>
+      </mat-card-title>
+      <mat-card-actions class="actions">
+        <a
+          mat-button
+          href="https://www.google.com/"
+          target="_blank"
+          class="view-all-btn"
+          >View All</a
+        >
+        <mat-icon svgIcon="drag"></mat-icon>
+      </mat-card-actions>
+    </div>
+    <div class="header-row">
+      <mat-form-field
+        subscriptSizing="dynamic"
+        appearance="outline"
+        class="search-container"
+      >
+        <input matInput type="search" />
+        <button matSuffix mat-icon-button aria-label="Search">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-card-actions class="actions filter-actions">
+        <button mat-stroked-button>
+          Filter <mat-icon svgIcon="filter-list" iconPositionEnd></mat-icon>
+        </button>
+        <button mat-stroked-button>
+          Export <mat-icon svgIcon="download" iconPositionEnd></mat-icon>
+        </button>
+      </mat-card-actions>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content select="[card-content]"></ng-content>
+  </mat-card-content>
+</mat-card>

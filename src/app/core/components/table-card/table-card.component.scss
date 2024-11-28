@@ -1,0 +1,61 @@
+@use "@angular/material" as mat;
+
+:host {
+  --mdc-outlined-card-container-color: white;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  --mat-card-title-text-font: "Plus Jakarta Sans", sans-serif;
+  display: block;
+  --mdc-filled-text-field-container-color: white;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mdc-outlined-text-field-outline-color: #e7e7e7;
+  --mdc-text-button-container-height: 24px;
+  --mdc-outlined-button-label-text-color: #091836;
+  --mdc-outlined-button-label-text-weight: 600;
+}
+
+.mat-mdc-card-header {
+  display: flex;
+  flex-direction: column;
+  
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 8px;
+    align-items: center;
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .actions {
+      min-height: auto;
+      height: auto;
+
+      mat-icon {
+        cursor: pointer;
+      }
+    }
+
+    .view-all-btn {
+      text-decoration: underline;
+      color: #091836;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .search-container {
+      width: 500px;
+      @include mat.form-field-density(-5);
+    }
+
+    .filter-actions {
+      display: flex;
+      gap: 10px;
+      mat-icon {
+      }
+    }
+  }
+}

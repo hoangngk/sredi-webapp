@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SimpleCardComponent } from '../../../../core/components/simple-card/simple-card.component';
 import { TimesheetSummaryComponent } from "./components/timesheet-summary/timesheet-summary.component";
 import { ProjectHoursComponent } from "./components/project-hours/project-hours.component";
+import { TableCardComponent } from "../../../../core/components/table-card/table-card.component";
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -20,7 +21,8 @@ import { ProjectHoursComponent } from "./components/project-hours/project-hours.
     SimpleCardComponent,
     MatCardModule,
     TimesheetSummaryComponent,
-    ProjectHoursComponent
+    ProjectHoursComponent,
+    TableCardComponent
 ],
   templateUrl: './dashboard.page.html',
   styleUrl: './dashboard.page.scss',
