@@ -1,42 +1,16 @@
 <section class="timesheet-summary-container">
+  @for (item of timesheets; track $index) {
   <div class="card-item">
-    <div class="title">Timesheets Expected</div>
+    <div class="title">{{ item.title }}</div>
     <div class="card-content">
-      <div class="value">{{ 100 }}</div>
-      <div class="stats up">
-        <mat-icon svgIcon="arrow-green-up"></mat-icon>
-        <div class="percent">20%</div>
+      <div class="value">{{ item.value }}</div>
+      <div class="stats" [class]="item.status">
+        <mat-icon
+          [svgIcon]="item.status === 'up' ? 'arrow-green-up' : 'arrow-red-down'"
+        ></mat-icon>
+        <div class="percent">{{ item.percentage }}%</div>
       </div>
     </div>
   </div>
-  <div class="card-item">
-    <div class="title">Timesheets Expected</div>
-    <div class="card-content">
-      <div class="value">{{ 100 }}</div>
-      <div class="stats up">
-        <mat-icon svgIcon="arrow-green-up"></mat-icon>
-        <div class="percent">20%</div>
-      </div>
-    </div>
-  </div>
-  <div class="card-item">
-    <div class="title">Timesheets Expected</div>
-    <div class="card-content">
-      <div class="value">{{ 100 }}</div>
-      <div class="stats up">
-        <mat-icon svgIcon="arrow-green-up"></mat-icon>
-        <div class="percent">20%</div>
-      </div>
-    </div>
-  </div>
-  <div class="card-item">
-    <div class="title">Timesheets Expected</div>
-    <div class="card-content">
-      <div class="value">{{ 100 }}</div>
-      <div class="stats up">
-        <mat-icon svgIcon="arrow-green-up"></mat-icon>
-        <div class="percent">20%</div>
-      </div>
-    </div>
-  </div>
+  }
 </section>
