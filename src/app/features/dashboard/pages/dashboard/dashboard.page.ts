@@ -6,6 +6,7 @@ import { IntegrationsComponent } from '../../../../shared/components/integration
 import { OverallHoursComponent } from './components/overall-hours/overall-hours.component';
 import { MatCardModule } from '@angular/material/card';
 import { SimpleCardComponent } from '../../../../core/components/simple-card/simple-card.component';
+import { TimesheetSummaryComponent } from "./components/timesheet-summary/timesheet-summary.component";
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -16,8 +17,9 @@ import { SimpleCardComponent } from '../../../../core/components/simple-card/sim
     IntegrationsComponent,
     OverallHoursComponent,
     SimpleCardComponent,
-    MatCardModule
-  ],
+    MatCardModule,
+    TimesheetSummaryComponent
+],
   templateUrl: './dashboard.page.html',
   styleUrl: './dashboard.page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
