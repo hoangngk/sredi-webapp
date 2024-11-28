@@ -1,0 +1,23 @@
+.employee-name-cell {
+  display: flex;
+  align-items: center;
+
+  .img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.employee-missing-timesheet-cell {
+  a {
+    color: #091836;
+    font-weight: 600;
+  }
+}
+
+.employee-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

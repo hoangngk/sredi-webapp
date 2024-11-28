@@ -9,6 +9,7 @@ import { SimpleCardComponent } from '../../../../core/components/simple-card/sim
 import { TimesheetSummaryComponent } from "./components/timesheet-summary/timesheet-summary.component";
 import { ProjectHoursComponent } from "./components/project-hours/project-hours.component";
 import { TableCardComponent } from "../../../../core/components/table-card/table-card.component";
+import { EmployeesSummaryComponent } from "./components/employees-summary/employees-summary.component";
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -22,7 +23,8 @@ import { TableCardComponent } from "../../../../core/components/table-card/table
     MatCardModule,
     TimesheetSummaryComponent,
     ProjectHoursComponent,
-    TableCardComponent
+    TableCardComponent,
+    EmployeesSummaryComponent
 ],
   templateUrl: './dashboard.page.html',
   styleUrl: './dashboard.page.scss',
