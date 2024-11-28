@@ -1,7 +1,22 @@
-<div class="profile-card">
-  <img src="images/user_avatar.png" alt="User Profile" class="profile-image" />
-  <div class="profile-details">
-    <div class="profile-name">John Doe</div>
-    <div class="profile-role">Admin</div>
-  </div>
+<div class="profile-container">
+  <button mat-button [matMenuTriggerFor]="menu" class="menu-trigger">
+    <div class="user-info">
+      <img
+        src="images/user-avatar.png"
+        alt="User Avatar"
+        class="user-avatar"
+      />
+      <div class="user-details">
+        <div class="user-name">John Doe</div>
+        <div class="user-role">Admin</div>
+      </div>
+    </div>
+    <mat-icon svgIcon="arrow-down-simple"></mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu" [backdropClass]="'profile-selection-backdrop'">
+    <button mat-menu-item *ngFor="let option of options">
+      <span>{{ option.label }}</span>
+    </button>
+  </mat-menu>
 </div>

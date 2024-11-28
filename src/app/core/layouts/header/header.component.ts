@@ -34,9 +34,9 @@ export class HeaderComponent {
   ) {
     this.matIconRegistry
       .addSvgIcon(
-        'toggle_sidenav',
+        'toggle-sidenav',
         this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'icons/toggle_sidenav.svg'
+          'icons/toggle-sidenav.svg'
         )
       )
       .addSvgIcon(
