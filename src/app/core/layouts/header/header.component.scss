@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 .header-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,46 +22,17 @@
   }
 
   .search-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 8px 12px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    height: 25px;
-
-    .search-input {
-      flex: 1;
-      border: none;
-      outline: none;
-      font-size: 16px;
-      color: #4b5563;
-    }
-
-    .search-input::placeholder {
-      color: #9ca3af;
-    }
-
-    .search-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      outline: none;
-      padding: 0;
-      margin-left: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .search-button:hover {
-      opacity: 0.8;
-    }
+    @include mat.form-field-density(-5);
   }
 }
 
-.mat-mdc-form-field-outline {
-  border-color: #4caf50; /* Outline border color */
+:host {
+  --mdc-filled-text-field-container-color: white;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mdc-outlined-text-field-outline-color: #e7e7e7;
+}
+
+.mat-mdc-form-field-flex {
+  height: 40px;
 }

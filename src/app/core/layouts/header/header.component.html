@@ -5,12 +5,14 @@
         <mat-icon svgIcon="toggle-sidenav"></mat-icon>
       </button>
     </div>
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search" />
-      <button class="search-button">
+
+    <mat-form-field subscriptSizing="dynamic" appearance="outline" class="search-container">
+      <input matInput type="search">
+      <button matSuffix mat-icon-button aria-label="Search">
         <mat-icon>search</mat-icon>
       </button>
-    </div>
+    </mat-form-field>
+    
   </div>
   <div class="header-right">
     <button mat-icon-button matBadge="2" matBadgeColor="warn" class="mail-badge">
