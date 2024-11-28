@@ -1,7 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  OnInit,
+} from '@angular/core';
 import { AgCharts } from 'ag-charts-angular';
 import { AgChartOptions } from 'ag-charts-community';
-
+import { WorkingHoursService } from '../../../../../../core/services/working-hours.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-overall-hours',
   standalone: true,
@@ -9,17 +16,26 @@ import { AgChartOptions } from 'ag-charts-community';
   templateUrl: './overall-hours.component.html',
   styleUrl: './overall-hours.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [WorkingHoursService],
 })
 export class OverallHoursComponent implements OnInit {
-  public donutOptions!: AgChartOptions;
-  public barOptions!: AgChartOptions;
+  public trackedHoursChartOptions!: AgChartOptions;
+  public cumulativeHoursChartOptions!: AgChartOptions;
+
+  constructor(
+    private workingHoursService: WorkingHoursService,
+    private destroyRef: DestroyRef,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   public ngOnInit(): void {
-    this.donutOptions = {
-      data: [
-        { category: 'Total Worked Hours', value: 600 },
-        { category: 'Total Tracked Hours', value: 400 },
-      ],
+    this.setChartOptions();
+    this.setChartData();
+  }
+
+  private setChartOptions(): void {
+    this.trackedHoursChartOptions = {
+      data: [],
       series: [
         {
           type: 'donut',
@@ -57,39 +73,8 @@ export class OverallHoursComponent implements OnInit {
       },
     };
 
-    this.barOptions = {
-      data: [
-        {
-          month: 'Mar',
-          avgTemp: 6.3,
-          cumulativeHours: 302000,
-          totalHours: 500000,
-        },
-        {
-          month: 'May',
-          avgTemp: 16.2,
-          cumulativeHours: 800000,
-          totalHours: 1000000,
-        },
-        {
-          month: 'Jul',
-          avgTemp: 22.8,
-          cumulativeHours: 1254000,
-          totalHours: 1500000,
-        },
-        {
-          month: 'Sep',
-          avgTemp: 14.5,
-          cumulativeHours: 950000,
-          totalHours: 1200000,
-        },
-        {
-          month: 'Nov',
-          avgTemp: 8.9,
-          cumulativeHours: 200000,
-          totalHours: 300000,
-        },
-      ],
+    this.cumulativeHoursChartOptions = {
+      data: [],
       series: [
         {
           type: 'bar',
@@ -120,5 +105,26 @@ export class OverallHoursComponent implements OnInit {
         fill: '#F7F9FB',
       },
     };
+  }
+
+  private setChartData(): void {
+    this.workingHoursService
+      .getTrackedHours()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (data) => {
+          this.trackedHoursChartOptions.data = data;
+          this.cdr.markForCheck();
+        },
+      });
+    this.workingHoursService
+      .getCumulativeHours()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (data) => {
+          this.cumulativeHoursChartOptions.data = data;
+          this.cdr.detectChanges();
+        },
+      });
   }
 }
