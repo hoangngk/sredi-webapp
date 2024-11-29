@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 .header-container {
   display: grid;
@@ -23,13 +23,13 @@
 
   .search-container {
     @include mat.form-field-density(-5);
+    --mdc-filled-text-field-container-color: white;
+    --mat-form-field-container-vertical-padding: 8px;
+    --mat-form-field-container-vertical-padding: 8px;
   }
 }
 
 :host {
-  --mdc-filled-text-field-container-color: white;
-  --mat-form-field-container-vertical-padding: 8px;
-  --mat-form-field-container-vertical-padding: 8px;
   --mdc-outlined-text-field-outline-color: #e7e7e7;
 }
 
