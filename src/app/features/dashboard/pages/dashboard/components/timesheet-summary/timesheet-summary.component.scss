@@ -12,7 +12,6 @@
     padding: 24px 16px;
     border: 1px solid #e3e3e3;
     border-radius: 12px;
-    min-width: 250px;
 
     .title {
       color: #767676;
@@ -23,6 +22,7 @@
     .card-content {
       display: flex;
       justify-content: space-between;
+      width: 220px;
 
       .value {
         font-weight: 700;
