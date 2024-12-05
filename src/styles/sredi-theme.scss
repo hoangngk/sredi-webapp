@@ -6,7 +6,7 @@
 @include mat.core();
 
 // Note: Color palettes are generated from primary: #3090FF
-$_palettes: (
+$palettes: (
   primary: (
     0: #000000,
     10: #001b3c,
@@ -127,21 +127,21 @@ $_palettes: (
   ),
 );
 
-$_rest: (
-  secondary: map.get($_palettes, secondary),
-  neutral: map.get($_palettes, neutral),
-  neutral-variant: map.get($_palettes, neutral-variant),
-  error: map.get($_palettes, error),
+$rest: (
+  secondary: map.get($palettes, secondary),
+  neutral: map.get($palettes, neutral),
+  neutral-variant: map.get($palettes, neutral-variant),
+  error: map.get($palettes, error),
 );
-$_primary: map.merge(map.get($_palettes, primary), $_rest);
-$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+$primary: map.merge(map.get($palettes, primary), $rest);
+$tertiary: map.merge(map.get($palettes, tertiary), $rest);
 
 $light-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
-      primary: $_primary,
-      tertiary: $_tertiary,
+      primary: $primary,
+      tertiary: $tertiary,
     ),
   )
 );
@@ -155,6 +155,6 @@ html {
   // emit any typography styles.
   // @include mat.button-theme($light-theme);
   @include mat.all-component-themes($light-theme);
-
+  --mat-datepicker-calendar-container-background-color: #ffffff;
   // Include the theme mixins for other components you use here.
 }
